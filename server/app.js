@@ -2,7 +2,7 @@ const express = require("express");
 const mysql = require("mysql");
 const exphbs = require("express-handlebars");
 const fileUpload = require("express-fileupload");
-const path = require('path');
+const path = require("node:path");
 const dotenv = require("dotenv"); //for our .env file
 const cookieParser = require('cookie-parser');
 //delete body-parser dependeceny?
