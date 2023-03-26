@@ -5,12 +5,7 @@ const { promisify } = require('util');
 // To add validation on back-end: use the module Express-validator
 //https://express-validator.github.io/docs/
 
-const db = mysql.createConnection({ //to create a connection to our mysql db, we provide the metadata for connection below
-    host: process.env.DATABASE_HOST, //if i was using a server, we put the ip address of server here
-    user: process.env.DATABASE_USER, //xampp default username and pass is root and "(nothing)"
-    password: process.env.DATABASE_PASSWORD, //we use this syntax to access the env file contents
-    database: process.env.DATABASE
-})
+const db = mysql.createConnection(process.env.DATABASE_URL)
 
 //To actually connect to the db
 db.connect((error) => { //we give a parameter called error, so that if an error is coming up, deal with it somehow
